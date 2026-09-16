@@ -2766,3 +2766,341 @@ flex: 1;
 grid-template-columns: 32px 1fr auto;
 }
 }
+/* =========================================
+   BUKA BUSINESS SETUP
+========================================= */
+
+.business-setup-page {
+  min-height: 100vh;
+  background: #f6f7f8;
+  display: flex;
+  justify-content: center;
+  padding: 50px 24px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.business-setup-background {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.business-bg-one {
+  width: 430px;
+  height: 430px;
+  background: #e7efeb;
+  top: -220px;
+  right: -140px;
+}
+
+.business-bg-two {
+  width: 320px;
+  height: 320px;
+  background: #eee9e1;
+  bottom: -180px;
+  left: -120px;
+}
+
+.business-setup-card {
+  width: 100%;
+  max-width: 850px;
+  background: #ffffff;
+  border: 1px solid #e2e8e5;
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(24, 61, 52, 0.07);
+  box-sizing: border-box;
+}
+
+.business-setup-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 30px;
+}
+
+.business-brand-mark {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #183d34;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.business-setup-brand strong,
+.business-setup-brand span {
+  display: block;
+}
+
+.business-setup-brand strong {
+  font-size: 17px;
+  letter-spacing: 0.12em;
+}
+
+.business-setup-brand span {
+  font-size: 9px;
+  color: #89938f;
+  margin-top: 2px;
+}
+
+.business-progress {
+  margin-bottom: 30px;
+}
+
+.progress-line {
+  height: 4px;
+  border-radius: 10px;
+  background: #e9eeeb;
+  overflow: hidden;
+}
+
+.progress-line span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #183d34;
+  border-radius: inherit;
+}
+
+.business-progress p {
+  margin: 8px 0 0;
+  color: #8b9591;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.business-heading {
+  margin-bottom: 34px;
+}
+
+.business-eyebrow {
+  margin: 0 0 8px;
+  color: #477563;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.business-heading h1 {
+  margin: 0;
+  color: #17221e;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+}
+
+.business-heading > p:last-child {
+  max-width: 600px;
+  margin: 9px 0 0;
+  color: #7e8985;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.setup-section {
+  padding: 25px 0;
+  border-top: 1px solid #e9edeb;
+}
+
+.setup-section-heading {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  margin-bottom: 21px;
+}
+
+.setup-section-heading > span {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  border-radius: 9px;
+  background: #edf2ef;
+  color: #326655;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.setup-section-heading h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #1c2723;
+}
+
+.setup-section-heading p {
+  margin: 4px 0 0;
+  color: #8b9591;
+  font-size: 10px;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.setup-grid label {
+  display: block;
+}
+
+.setup-grid label > span {
+  display: block;
+  margin-bottom: 7px;
+  color: #4c5853;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.setup-grid input,
+.setup-grid select {
+  width: 100%;
+  min-height: 45px;
+  box-sizing: border-box;
+  border: 1px solid #dfe6e3;
+  border-radius: 11px;
+  background: #fbfcfb;
+  padding: 0 13px;
+  color: #1c2824;
+  font-family: inherit;
+  font-size: 11px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.setup-grid input:focus,
+.setup-grid select:focus {
+  border-color: #6e9688;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(69, 113, 96, 0.08);
+}
+
+.setup-grid input::placeholder {
+  color: #b1bab6;
+}
+
+.setup-grid select {
+  cursor: pointer;
+}
+
+.full-field {
+  grid-column: 1 / -1;
+}
+
+.setup-grid small {
+  display: block;
+  margin-top: 5px;
+  color: #a15353;
+  font-size: 9px;
+}
+
+.setup-grid .input-error {
+  border-color: #c77777;
+  background: #fffafa;
+}
+
+.money-input {
+  display: flex;
+  align-items: stretch;
+}
+
+.money-input > span {
+  min-width: 45px;
+  display: grid;
+  place-items: center;
+  background: #edf2ef;
+  border: 1px solid #dfe6e3;
+  border-right: 0;
+  border-radius: 11px 0 0 11px;
+  color: #557267;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.money-input input {
+  border-radius: 0 11px 11px 0;
+}
+
+.setup-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f3f7f5;
+  border-radius: 11px;
+  margin-top: 18px;
+}
+
+.setup-info > span {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 50%;
+  background: #dce9e3;
+  color: #326655;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.setup-info p {
+  margin: 1px 0 0;
+  color: #687771;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.setup-footer {
+  border-top: 1px solid #e9edeb;
+  padding-top: 24px;
+  margin-top: 5px;
+}
+
+.setup-footer > p {
+  margin: 0 0 15px;
+  color: #8a9591;
+  font-size: 9px;
+}
+
+.setup-submit {
+  width: 100%;
+  min-height: 50px;
+  justify-content: center;
+}
+
+
+/* =========================================
+   BUSINESS SETUP RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+  .business-setup-page {
+    padding: 20px 12px;
+  }
+
+  .business-setup-card {
+    padding: 23px 18px;
+    border-radius: 18px;
+  }
+
+  .business-heading h1 {
+    font-size: 27px;
+  }
+
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-field {
+    grid-column: auto;
+  }
+}
