@@ -1,7 +1,7 @@
-
 import React, { FormEvent, useState } from "react";
 import BusinessSetup from "./Pages/BusinessSetup";
 import Dashboard from "./Pages/Dashboard";
+import AddSale, { SaleData } from "./Pages/AddSale";
 
 type FormData = {
   fullName: string;
@@ -33,9 +33,13 @@ function App() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+
   const [screen, setScreen] = useState<
-    "register" | "success" | "businessSetup" | "dashboard"
+    "register" | "success" | "businessSetup" | "dashboard" | "addSale"
   >("register");
+
+  // Sales recorded during this session
+  const [sales, setSales] = useState<SaleData[]>([]);
 
   const [business, setBusiness] = useState<BusinessData>({
     businessName: "",
@@ -95,6 +99,10 @@ function App() {
     setScreen("success");
   };
 
+  /*
+   * BUSINESS SETUP
+   */
+
   if (screen === "businessSetup") {
     return (
       <BusinessSetup
@@ -106,15 +114,42 @@ function App() {
     );
   }
 
+  /*
+   * ADD SALE
+   */
+
+  if (screen === "addSale") {
+    return (
+      <AddSale
+        currency={business.currency}
+        onBack={() => setScreen("dashboard")}
+        onSave={(sale) => {
+          setSales((currentSales) => [...currentSales, sale]);
+          setScreen("dashboard");
+        }}
+      />
+    );
+  }
+
+  /*
+   * DASHBOARD
+   */
+
   if (screen === "dashboard") {
     return (
       <Dashboard
         businessName={business.businessName}
         category={business.category}
         currency={business.currency}
+        sales={sales}
+        onRecordSale={() => setScreen("addSale")}
       />
     );
   }
+
+  /*
+   * SUCCESS SCREEN
+   */
 
   if (screen === "success") {
     return (
@@ -151,12 +186,14 @@ function App() {
           >
             Continue to business setup <span>→</span>
           </button>
-
-          
         </section>
       </main>
     );
   }
+
+  /*
+   * REGISTRATION
+   */
 
   return (
     <main className="page-shell">
@@ -381,7 +418,7 @@ function App() {
               alert("Google sign-up will be connected later.")
             }
           >
-            <span className="google-icon">G</span>
+            <span className="google-icon"></span>
             Continue with Google
           </button>
 
